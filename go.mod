@@ -1,3 +1,3 @@
-module github.com/jritsema/gotoolbox
+module github.com/antsupovsa/gotoolbox
 
-go 1.18
+go 1.21
