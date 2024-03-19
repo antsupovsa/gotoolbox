@@ -10,6 +10,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
@@ -167,7 +168,7 @@ func TemplateParseFSRecursive(
 			name := ""
 			if nonRootTemplateNames {
 				//name the template based on the file path (excluding the root)
-				parts := strings.Split(path, string(os.PathSeparator))
+				parts := strings.Split(filepath.Clean(path), string(os.PathSeparator))
 				name = strings.Join(parts[1:], string(os.PathSeparator))
 			}
 			t := root.New(name).Funcs(funcMap)
